@@ -1,0 +1,19 @@
+id,name,calories,proteins,fat,carbohydrate,macro_sum,atwater_cal,atwater_abs_diff,flag_macro_gt_100,flag_calories_0,flag_dup_name_norm
+3,Agar-agar,0.0,0.0,0.2,0.0,0.2,1.8,1.8,False,True,False
+129,Beras Parboiled,364.0,6.8,0.6,80.1,87.5,353.0,11.0,False,False,True
+130,Beras parboiled,353.0,6.8,0.6,80.0,87.4,352.6,0.39999999999997726,False,False,True
+145,Bika ambon,199.0,2.1,1.5,44.4,48.0,199.5,0.5,False,False,True
+146,Bika Ambon ,225.7,3.0,0.3,52.9,56.199999999999996,226.29999999999998,0.5999999999999943,False,False,True
+321,Dendeng mujahir goreng,598.0,74.3,26.9,9.2,110.39999999999999,576.0999999999999,21.90000000000009,True,False,False
+477,Ikan Mujair dendeng goreng,598.0,74.3,26.9,9.2,110.39999999999999,576.0999999999999,21.90000000000009,True,False,False
+478,Ikan Mujair dendeng mentah,582.0,68.3,15.2,37.2,120.7,558.8,23.200000000000045,True,False,False
+643,Kacang Sukro Putih ,488.0,25.6,25.6,59.6,110.80000000000001,571.2,83.20000000000005,True,False,False
+654,Kacang Telur ,748.0,20.8,20.8,124.8,166.4,769.6,21.600000000000023,True,False,False
+749,Kerupuk Sayong ,46.7,17.3,17.3,81.3,115.9,550.1,503.40000000000003,True,False,False
+750,Kerupuk Udang ,340.0,30.0,30.0,52.0,112.0,598.0,258.0,True,False,False
+751,Kerupuk Udang berpati,359.0,17.2,68.2,332.0,417.4,2010.6,1651.6,True,False,False
+810,Kue Tambang ,512.0,26.0,26.0,60.4,112.4,579.6,67.60000000000002,True,False,False
+950,Opak Singkong ,940.0,36.0,42.0,104.0,182.0,938.0,2.0,True,False,False
+991,Pilus ,514.0,1.0,27.8,647.0,675.8,2842.2,2328.2,True,False,False
+1275,Terasi Merah,174.0,30.0,3.5,3.5,37.0,165.5,8.5,False,False,True
+1276,Terasi merah,174.0,30.0,3.5,5.6,39.1,173.9,0.09999999999999432,False,False,True

@@ -1,0 +1,3 @@
+dataset,jumlah_baris,missing_total,duplikat_baris,outlier_iqr_calories,macro_sum_gt_100,korelasi_fat_calories,r2_atwater_vs_calories,baseline_lr_r2_test,baseline_lr_mae_test,baseline_lr_rmse_test
+data_mentah_sebelum_cleaning,1346,0,0,13,11,0.7378093044948884,0.7848872017872995,0.8973633556072698,40.03208023132929,52.84202931268869
+data_bersih_sesudah_cleaning,1335,0,0,12,0,0.7394743423493824,0.9517039046868794,0.9754937530317432,11.496299261786865,24.639095084255455

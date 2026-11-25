@@ -1,0 +1,3 @@
+model,penjelasan
+LinearRegression,R² 0.975 artinya model menjelaskan sekitar 97.5% variasi kalori. MAE 11.50 kkal artinya rata-rata tebakan meleset sekitar 11.5 kkal; untuk makanan 200 kkal ini sekitar 5.7%. RMSE 24.64 kkal memberi penalti lebih besar pada error besar.
+SVR,R² 0.973 artinya model menjelaskan sekitar 97.3% variasi kalori. MAE 10.98 kkal artinya rata-rata tebakan meleset sekitar 11.0 kkal; untuk makanan 200 kkal ini sekitar 5.5%. RMSE 25.82 kkal memberi penalti lebih besar pada error besar.

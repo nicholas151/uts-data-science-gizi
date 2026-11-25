@@ -1,0 +1,5 @@
+langkah,baris_sebelum,baris_sesudah,baris_terdampak,catatan
+Hapus missing kolom penting,1346,1346,0,Tidak diharapkan; audit awal 0 missing
+Hapus nilai negatif,1346,1346,0,Nilai gizi tidak boleh negatif
+Hapus macro_sum > 100g,1346,1335,11,Secara fisik tidak mungkin; contoh: Pilus karbohidrat 647g
+Hapus duplikat baris penuh,1335,1335,0,
