@@ -50,9 +50,14 @@ Model utama adalah **Linear Regression (OLS)** (`sklearn.linear_model.LinearRegr
 | Linear Regression | 0.9461 | 0.9755 | 37.26 | 24.64 | -0.0294 | 0.6612 |
 | SVR | 0.9514 | 0.9731 | 35.38 | 25.82 | -0.0217 | 0.7296 |
 
-**Model terbaik:** **Linear Regression**. Berdasarkan RMSE test, Linear Regression (24.64 kkal) sedikit lebih baik daripada SVR (25.82 kkal), dengan R² test sangat tinggi (0.9755). SVR memiliki MAE sedikit lebih rendah (10.98 vs 11.50), tetapi kurang interpretabel dan memerlukan tuning/scaling. Karena selisih performa kecil dan Linear Regression lebih transparan (koefisien dekat faktor Atwater 4/9/4), Linear Regression dipilih sebagai model utama. Selisih train-test tidak menunjukkan overfitting; test error bahkan lebih rendah, kemungkinan karena distribusi test lebih mudah dan penghapusan outlier ekstrem saat cleaning.
+**Model terbaik:** **Linear Regression**. Berdasarkan RMSE test, Linear Regression (24.64 kkal) sedikit lebih baik daripada SVR (25.82 kkal), dengan R² test sangat tinggi (0.9755). SVR memiliki MAE sedikit lebih rendah (10.98 vs 11.50), tetapi kurang interpretabel dan memerlukan tuning/scaling. Karena selisih performa kecil dan Linear Regression lebih transparan (koefisien dekat faktor Atwater 4/9/4), Linear Regression dipilih sebagai model utama.
+
+**Cek stabilitas (Cek 1):** 5-fold CV pada seluruh data bersih (`KFold(5, shuffle=True, random_state=42)`) menghasilkan LR R² 0,9489±0,0301, MAE 12,72±1,81, RMSE 34,27±8,70; SVR R² 0,9485±0,0296, MAE 11,48±1,85, RMSE 34,49±8,66. CV mean lebih dekat ke train (R² 0,9461) daripada test (R² 0,9755), sehingga R² test > train kemungkinan akibat **variasi split** (test lebih mudah: outlier IQR kalori test 2 vs train 10; residual besar banyak di train). Lihat `outputs/cv_5fold.csv`.
+
+**Sensitivity cleaning (Cek 2):** Baseline LR pada data mentah sebelum cleaning: R² 0,8974, MAE 40,03, RMSE 52,84; setelah cleaning: R² 0,9755, MAE 11,50, RMSE 24,64 (`outputs/perbandingan_sebelum_sesudah_cleaning.csv`). Evaluasi model final pada test mentah (test bersih + 11 baris dibuang): LR turun drastis (R² 0,0414, MAE 28,18, RMSE 168,37), SVR lebih tahan (R² 0,8984, MAE 17,93, RMSE 54,83) (`outputs/sensitivity_test_mentah.csv`). Metrik data bersih bisa lebih optimistis daripada data lapangan kotor.
 
 ## Status Target SMART
+Catatan transparansi (Cek 3, jujur): target lolos dengan margin besar karena `calories` secara gizi hampir merupakan fungsi linear dari makronutrien (faktor Atwater 4/9/4 kkal/g), sehingga tugas ini relatif mudah untuk model linear. Target **tidak diubah** setelah melihat hasil.
 | Target | Nilai aktual LR | Nilai aktual SVR | Status LR | Status SVR |
 |---|---:|---:|:---:|:---:|
 | R² test ≥ 0,80 | 0.9755 | 0.9731 | ✅ | ✅ |
@@ -141,6 +146,8 @@ Catatan: jalankan dari root repo karena notebook memakai path relatif `Path.cwd(
 | 4 | 1. Metrik akhir di data test | `05_evaluation.ipynb` | `[Progress 4 – Capaian 1]` | ✅ |
 | 4 | 2. Grafik pendukung | `05_evaluation.ipynb` | `[Progress 4 – Capaian 2]` | ✅ |
 | 4 | 3. Train vs test (overfitting) | `05_evaluation.ipynb` | `[Progress 4 – Capaian 3]` | ✅ |
+| 4 | 3a. Cek 1: 5-fold CV & diagnosis test>train | `05_evaluation.ipynb` | `Cek 1 (Tambahan)` | ✅ |
+| 4 | 9a. Cek 2: Sensitivity test mentah | `05_evaluation.ipynb` | `Cek 2 (Tambahan)` | ✅ |
 | 4 | 4. Model terbaik | `05_evaluation.ipynb` | `[Progress 4 – Capaian 4]` | ✅ |
 | 4 | 5. Analisis kesalahan | `05_evaluation.ipynb` | `[Progress 4 – Capaian 5]` | ✅ |
 | 4 | 6. Jawaban pertanyaan BU | `05_evaluation.ipynb` | `[Progress 4 – Capaian 6]` | ✅ |
@@ -159,3 +166,6 @@ Catatan: jalankan dari root repo karena notebook memakai path relatif `Path.cwd(
 8. **Lisensi dataset belum terverifikasi**; README/LICENSE tidak mengklaim lisensi data.
 9. **Modul/minggu praktikum asal model** belum dikonfirmasi pengguna; ditulis sebagai placeholder di notebook 04.
 10. **Tanggal tenggat Progress 4** belum dikonfirmasi; target waktu ditulis "sesuai jadwal Progress 4 mata kuliah".
+11. **Cek 1:** CV 5-fold seluruh data bersih memberi LR R² 0,9489±0,0301, MAE 12,72±1,81, RMSE 34,27±8,70; SVR R² 0,9485±0,0296, MAE 11,48±1,85, RMSE 34,49±8,66. R² test > train dijelaskan oleh variasi split/outlier train.
+12. **Cek 2:** 11 baris dibuang saat cleaning (`macro_sum>100g`) tidak masuk test bersih; sensitivity (test bersih+baris dibuang) membuat LR turun drastis (R² 0,0414, RMSE 168,37) dan SVR turun (R² 0,8984, RMSE 54,83), sehingga metrik data bersih lebih optimistis.
+13. **Cek 3:** Target SMART lolos margin besar karena hubungan Atwater hampir linear; target tidak diubah.
