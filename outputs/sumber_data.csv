@@ -1,0 +1,6 @@
+field,value
+repo_sumber,https://github.com/nicholas151/uts-data-science-gizi
+file,nutrition.csv
+lisensi,belum terverifikasi
+cara_verifikasi,"cek README/riwayat repo, metadata dataset publik, hubungi pemilik repo"
+kolom_image,URL pihak ketiga; tidak dipakai modeling; tidak diunduh

@@ -1,0 +1,4 @@
+pertanyaan_BU,jawaban
+"Apakah kalori dapat diestimasi dari protein, lemak, karbohidrat?","Ya. Linear Regression test R²=0.9755, MAE=11.50, RMSE=24.64. SVR test R²=0.9731, MAE=10.98, RMSE=25.82."
+Model mana lebih baik?,Model terbaik berdasarkan RMSE test: LinearRegression. Pertimbangan lain: interpretabilitas dan gap train-test.
+Apakah target SMART tercapai?,Lihat tabel capaian 8.

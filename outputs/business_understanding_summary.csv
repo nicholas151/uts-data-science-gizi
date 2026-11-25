@@ -1,0 +1,11 @@
+item,nilai
+judul,"Estimasi Kandungan Kalori Makanan Indonesia dari Protein, Lemak, dan Karbohidrat Menggunakan Regresi Linear dengan Pembanding SVR"
+n_rows,1346
+n_cols,7
+target,calories
+fitur_utama,proteins;fat;carbohydrate
+split,80/20 stratified by calories bins
+random_state,42
+r2_target,0.8
+mae_target,45
+rmse_target,70

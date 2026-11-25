@@ -1,0 +1,8 @@
+kolom,dtype,missing,n_unique,n_zero
+id,int64,0,1346,
+calories,float64,0,472,1.0
+proteins,float64,0,312,22.0
+fat,float64,0,279,26.0
+carbohydrate,float64,0,544,104.0
+name,str,0,1346,
+image,str,0,1307,

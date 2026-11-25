@@ -1,0 +1,8 @@
+kolom,tipe,satuan,deskripsi,peran,contoh
+id,int64,-,ID unik baris,identitas/dibuang,1
+calories,float64,kkal (belum terverifikasi),Energi makanan,target,280.0
+proteins,float64,gram (belum terverifikasi),Kandungan protein,fitur utama,9.2
+fat,float64,gram (belum terverifikasi),Kandungan lemak,fitur utama,28.4
+carbohydrate,float64,gram (belum terverifikasi),Kandungan karbohidrat,fitur utama,0.0
+name,str,-,Nama makanan,identitas/analisis error,Abon
+image,str,-,URL gambar,dibuang dari fitur,https://img-cdn.medkomtek.com/PbrY9X3ignQ8sVuj_LU9UXljyew=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/7g8ceHGDNMuttlBcXEl8d/original/099726800_1605161502-Mana-yang-Lebih-Sehat-Abon-Sapi-atau-Abon-Ayam-shutterstock_1361446550.jpg
